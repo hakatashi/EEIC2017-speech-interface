@@ -11,3 +11,9 @@ practice2/data.csv: data/speech_sample/speech_sample/A_a.wav
 
 practice2/data.png: practice2/data.csv
 	gnuplot -e filename='"$<"' practice2/plot.gnuplot > $@
+
+assignment1/data.csv: data/speech_sample/speech_sample/A_a.wav
+	node assignment1/index.js $< > $@
+
+assignment1/data.png: assignment1/data.csv
+	gnuplot -e filename='"$<"' assignment1/plot.gnuplot > $@
