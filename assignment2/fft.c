@@ -152,24 +152,22 @@ int main( int argc, char *argv[] )
     xi[i] = 0.0;
   }
 
-  /* for( i = 0 ; i < 1000 ; i++ ) { */
   FFT( xr, xi, Xr, Xi, framelen );
-  /* } */
 
-  /*
+#ifdef MODE_IFFT
   IFFT( Xr, Xi, xr, xi, framelen );
-  */
+#endif
 
+#ifdef MODE_IFFT
+  for( i = 0 ; i < framelen ; i++ ) {
+    printf( "%d %lf\n", i, xr[i] );
+  }
+#else
   for( i = 0 ; i < framelen ; i++ ) {
     spec = log10( (1.0/framelen)*( Xr[i]*Xr[i]+Xi[i]*Xi[i] ) );
     printf( "%d %lf\n", i, spec );
   }
-
-  /*
-  for( i = 0 ; i < framelen ; i++ ) {
-    printf( "%d %lf\n", i, xr[i] );
-  }
-  */
+#endif
 
   return( 0 );
 }
