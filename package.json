@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/hakatashi/EEIC2017-speech-interface/issues"
   },
-  "homepage": "https://github.com/hakatashi/EEIC2017-speech-interface#readme"
+  "homepage": "https://github.com/hakatashi/EEIC2017-speech-interface#readme",
+  "dependencies": {
+    "gnuplot": "^0.3.1",
+    "wav": "^1.0.1"
+  }
 }
