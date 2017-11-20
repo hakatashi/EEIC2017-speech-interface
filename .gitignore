@@ -60,3 +60,5 @@ typings/
 data
 *.csv
 *.png
+*.exe
+*.txt

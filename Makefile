@@ -17,3 +17,7 @@ assignment1/data.csv: data/speech_sample/speech_sample/A_a.wav
 
 assignment1/data.png: assignment1/data.csv
 	gnuplot -e filename='"$<"' assignment1/plot.gnuplot > $@
+
+.PHONY: assignment2
+assignment2:
+	$(MAKE) -C $@ -B
