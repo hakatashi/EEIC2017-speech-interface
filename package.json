@@ -1,0 +1,20 @@
+{
+  "name": "EEIC2017-speech-interface",
+  "version": "1.0.0",
+  "description": "東京大学電気電子情報実験演習第二「音声対話システムの構築」作業用リポジトリ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakatashi/EEIC2017-speech-interface.git"
+  },
+  "keywords": [],
+  "author": "Koki Takahashi <hakatasiloving@gmail.com> (http://hakatashi.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakatashi/EEIC2017-speech-interface/issues"
+  },
+  "homepage": "https://github.com/hakatashi/EEIC2017-speech-interface#readme"
+}
