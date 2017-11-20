@@ -5,3 +5,9 @@ data/speech_sample.zip:
 data/speech_sample: data/speech_sample.zip
 	mkdir -p $@
 	unzip -d $@ $<
+
+practice2/data.csv: data/speech_sample/speech_sample/A_a.wav
+	node practice2/index.js $< > $@
+
+practice2/data.png: practice2/data.csv
+	gnuplot -e filename='"$<"' practice2/plot.gnuplot > $@

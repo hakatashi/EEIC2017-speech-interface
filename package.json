@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/hakatashi/EEIC2017-speech-interface#readme",
   "dependencies": {
+    "csv": "^2.0.0",
     "gnuplot": "^0.3.1",
     "wav": "^1.0.1"
   }
