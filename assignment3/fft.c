@@ -117,7 +117,7 @@ void IFFT( double *Xr, double *Xi, double *xr, double *xi, int N )
 int main( int argc, char *argv[] )
 {
   int  i, nskip, framelen;
-  double spec, ret;
+  double spec, ret, iet;
   short  *sdata;
   double *xr, *xi, *Xr, *Xi;
   FILE *fpDAT;
@@ -146,9 +146,19 @@ int main( int argc, char *argv[] )
   fseek( fpDAT, nskip*sizeof(short), SEEK_SET );
 
   for( i = 0 ; i < framelen ; i++ ) {
+#ifdef MODE_SPEC
+    fscanf(fpDAT, "%lf %lf", &ret, &iet);
+    xr[i] = log10( (1.0/framelen)*( ret*ret+iet*iet ) );
+    xi[i] = 0.0;
+#elif defined MODE_IFFT
+    fscanf(fpDAT, "%lf %lf", &ret, &iet);
+    xr[i] = ret;
+    xi[i] = iet;
+#else
     fscanf(fpDAT, "%lf", &ret);
     xr[i] = ret;
     xi[i] = 0.0;
+#endif
   }
 
   fclose( fpDAT );
@@ -165,8 +175,7 @@ int main( int argc, char *argv[] )
   }
 #else
   for( i = 0 ; i < framelen ; i++ ) {
-    spec = log10( (1.0/framelen)*( Xr[i]*Xr[i]+Xi[i]*Xi[i] ) );
-    printf( "%lf\n", spec );
+    printf( "%lf %lf\n", Xr[i], Xi[i] );
   }
 #endif
 
