@@ -1,6 +1,8 @@
 .PHONY: all clean
 
-all: hoge
+all: \
+	A_a.spectrum.png \
+	A_a.autocorrelation.spectrum.png
 
 clean:
 	git clean -fdX
