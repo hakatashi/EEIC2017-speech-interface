@@ -1,4 +1,4 @@
-SUBDIRS := practice2 assignment1 assignment2
+SUBDIRS := practice2 assignment1 assignment2 assignment3 assignment4
 
 all: $(SUBDIRS)
 
